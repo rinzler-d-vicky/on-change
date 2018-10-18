@@ -1,4 +1,4 @@
-# on-change [![Build Status](https://travis-ci.org/sindresorhus/on-change.svg?branch=master)](https://travis-ci.org/sindresorhus/on-change)
+# This is a fork of [on-change](https://npmjs.org/sindresorhus/on-change)
 
 > Watch an object or array for changes
 
@@ -10,14 +10,14 @@ Uses the [`Proxy` API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 ## Install
 
 ```
-$ npm install on-change
+$ npm install @rubix-code/on-change
 ```
 
 
 ## Usage
 
 ```js
-const onChange = require('on-change');
+import observe from "@rubix-code/on-change"
 
 const object = {
 	foo: false,
@@ -31,8 +31,8 @@ const object = {
 };
 
 let i = 0;
-const watchedObject = onChange(object, () => {
-	console.log('Object changed:', ++i);
+const watchedObject = observe(object, (o) => {
+	console.log(o, 'Object changed:', ++i);
 });
 
 watchedObject.foo = true;
@@ -58,6 +58,9 @@ Object to watch for changes.
 #### onChange
 
 Type: `Function`
+
+Param: `Object`
+The changed object
 
 Function that gets called anytime the object changes.
 
@@ -95,7 +98,7 @@ Now it can be simplified to:
 const foo = onChange({
 	a: 0,
 	b: 0
-}, () => save(foo));
+}, (obj) => save(obj));
 
 // …
 
