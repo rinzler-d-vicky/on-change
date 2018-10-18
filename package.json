@@ -1,43 +1,47 @@
 {
-	"name": "on-change",
-	"version": "0.1.0",
-	"description": "Watch an object or array for changes",
-	"license": "MIT",
-	"repository": "sindresorhus/on-change",
-	"author": {
-		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
-	},
-	"engines": {
-		"node": ">=6"
-	},
-	"scripts": {
-		"test": "xo && ava",
-		"bench": "matcha bench/bench.js"
-	},
-	"files": [
-		"index.js"
-	],
-	"keywords": [
-		"on",
-		"change",
-		"watch",
-		"object",
-		"array",
-		"changes",
-		"observe",
-		"watcher",
-		"observer",
-		"proxy",
-		"proxies",
-		"es2015",
-		"event",
-		"listener"
-	],
-	"devDependencies": {
-		"ava": "*",
-		"matcha": "^0.7.0",
-		"xo": "*"
-	}
+  "name": "@rubix-code/on-change",
+  "version": "0.0.2",
+  "description": "Watch an object or array for changes",
+  "license": "MIT",
+  "repository": "rubix-code/on-change",
+  "main": "dist/index.js",
+  "author": {
+    "name": "Rubixcode",
+    "email": "contact@rubixcode.com",
+    "url": "rubixcode.com"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "bench": "matcha bench/bench.js",
+    "release": "standard-version",
+    "build": "rm -rf dist && ntsc",
+    "deploy": "npm run build && cp package.json dist/package.json && cp readme.md dist/readme.md && npm publish --access=public dist"
+  },
+  "keywords": [
+    "on",
+    "change",
+    "watch",
+    "object",
+    "array",
+    "changes",
+    "observe",
+    "watcher",
+    "observer",
+    "proxy",
+    "proxies",
+    "es2015",
+    "event",
+    "listener"
+  ],
+  "devDependencies": {
+    "@types/node": "^10.12.0",
+    "matcha": "^0.7.0",
+    "mocha": "^5.2.0",
+    "ntypescript": "^1.201706190042.1",
+    "standard-version": "^4.4.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.3"
+  }
 }
